@@ -38,7 +38,7 @@ $quote = json_decode($response->body);
 
 if ($quote->type === 'success') {
 
-  $message = $quote->value->joke . '\n\nhttp://quotes.ejillberth.xyz';
+  $message = $quote->value->joke;
 
   $linkData = [
     'message' => $quote->value->joke,
