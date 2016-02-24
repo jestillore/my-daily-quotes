@@ -11,6 +11,6 @@ $fb = new Facebook\Facebook([
 $helper = $fb->getRedirectLoginHelper();
 
 $permissions = ['public_profile', 'publish_actions']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('http://localhost:8003/fb-callback.php', $permissions);
+$loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php', $permissions);
 
 echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
