@@ -10,9 +10,11 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.5',
   ]);
 
+$accessToken = 'CAAZAFatZBXxZCgBAN6V3NUIfpfe1pt0blhJMbhzEHVaSDwZCN6tZCZB2cAzPLe5RbPAvHQ0HO5JHD4rwTIidoYPHFFWSU9YAbj1FAUc2kvqz40Gp20SyvbZCNiPieMZCDdZAqXUOYvKDlVh5s0gkWa7CNlvQ25zXkVI2hM4OFswTQFG7dMMVzT7vb7Atfj30vlnuTXZCnWLoA7FQZDZD';
+
 try {
   // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->get('/me?fields=id,first_name,last_name', 'CAAZAFatZBXxZCgBAN6V3NUIfpfe1pt0blhJMbhzEHVaSDwZCN6tZCZB2cAzPLe5RbPAvHQ0HO5JHD4rwTIidoYPHFFWSU9YAbj1FAUc2kvqz40Gp20SyvbZCNiPieMZCDdZAqXUOYvKDlVh5s0gkWa7CNlvQ25zXkVI2hM4OFswTQFG7dMMVzT7vb7Atfj30vlnuTXZCnWLoA7FQZDZD');
+  $response = $fb->get('/me?fields=id,first_name,last_name', $accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
@@ -32,4 +34,28 @@ $url = $curl->buildUrl('http://api.icndb.com/jokes/random', [
 
 $response = $curl->get($url);
 
-echo $response->body;
+$quote = json_decode($response->body);
+
+if ($quote->type === 'success') {
+
+  $linkData = [
+    'link' => 'http://quotes.ejillberth.xyz',
+    'message' => $quote->value->joke,
+    ];
+
+  try {
+    // Returns a `Facebook\FacebookResponse` object
+    $response = $fb->post('/me/feed', $linkData, $accessToken);
+  } catch(Facebook\Exceptions\FacebookResponseException $e) {
+    echo 'Graph returned an error: ' . $e->getMessage();
+    exit;
+  } catch(Facebook\Exceptions\FacebookSDKException $e) {
+    echo 'Facebook SDK returned an error: ' . $e->getMessage();
+    exit;
+  }
+
+  $graphNode = $response->getGraphNode();
+
+  echo 'Posted with id: ' . $graphNode['id'];
+
+}
