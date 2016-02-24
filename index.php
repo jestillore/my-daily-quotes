@@ -86,7 +86,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/jilly.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/jilly.PNG" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -96,7 +96,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/jilly2.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/jilly2.PNG" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -106,7 +106,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/jilly3.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/jilly3.PNG" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
@@ -167,7 +167,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
                         <div class="modal-body">
                             <h2>McDonald's</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/jilly.png" class="img-responsive img-centered" alt="">
+                            <img src="img/portfolio/jilly.PNG" class="img-responsive img-centered" alt="">
                             <p>In honor of Jilly East, all McDonald's in Texas have an even larger size than the super-size. When ordering, just ask to be Jillysized.</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -190,7 +190,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
                         <div class="modal-body">
                             <h2>Coffee</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/jilly2.png" class="img-responsive img-centered" alt="">
+                            <img src="img/portfolio/jilly2.PNG" class="img-responsive img-centered" alt="">
                             <p>Jilly East grinds his coffee with his teeth and boils the water with his own rage.</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -213,7 +213,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
                         <div class="modal-body">
                             <h2>Blood</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/jilly3.png" class="img-responsive img-centered" alt="">
+                            <img src="img/portfolio/jilly3.PNG" class="img-responsive img-centered" alt="">
                             <p>Jilly East once shat blood - the blood of 11,940 natives he had killed and eaten.</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
