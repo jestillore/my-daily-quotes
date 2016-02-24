@@ -138,7 +138,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; myDailyQuotes 2016
+                        Copyright &copy; <a href="http://ejillberth.xyz">Jillberth Estillore</a> 2016
                     </div>
                 </div>
             </div>
