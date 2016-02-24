@@ -10,7 +10,7 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.5',
   ]);
 
-$accessToken = 'CAAZAFatZBXxZCgBAN6V3NUIfpfe1pt0blhJMbhzEHVaSDwZCN6tZCZB2cAzPLe5RbPAvHQ0HO5JHD4rwTIidoYPHFFWSU9YAbj1FAUc2kvqz40Gp20SyvbZCNiPieMZCDdZAqXUOYvKDlVh5s0gkWa7CNlvQ25zXkVI2hM4OFswTQFG7dMMVzT7vb7Atfj30vlnuTXZCnWLoA7FQZDZD';
+$accessToken = $_SESSION['fb_access_token'];
 
 try {
   // Returns a `Facebook\FacebookResponse` object
