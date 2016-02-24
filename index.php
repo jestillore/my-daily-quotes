@@ -15,7 +15,13 @@ $helper = $fb->getRedirectLoginHelper();
 $permissions = ['public_profile', 'publish_actions']; // Optional permissions
 $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php', $permissions);
 
-// echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
+$curl = new anlutro\cURL\cURL;
+
+$url = $curl->buildUrl('http://api.icndb.com/jokes/random', []);
+
+$response = $curl->get($url);
+
+$quote = json_decode($response->body);
 
 ?>
 
@@ -62,7 +68,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
                     <div class="intro-text">
                         <span class="name" style="text-transform: none;">myDailyQuotes</span>
                         <hr class="star-light">
-                        <span class="skills">Post a Facebook status just like how Chuck Norris would.</span>
+                        <span class="skills">have your own CHUCK NORRIS joke personalized only for you</span>
                     </div>
                 </div>
             </div>
@@ -74,40 +80,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Sample Posts</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/jilly.PNG" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/jilly2.PNG" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/jilly3.PNG" class="img-responsive" alt="">
-                    </a>
+                    <h2><?= $quote->value->joke?></h2>
                 </div>
             </div>
         </div>
@@ -150,77 +123,6 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
         <a class="btn btn-primary" href="#page-top">
             <i class="fa fa-chevron-up"></i>
         </a>
-    </div>
-
-    <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>McDonald's</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/jilly.PNG" class="img-responsive img-centered" alt="">
-                            <p>In honor of Jilly East, all McDonald's in Texas have an even larger size than the super-size. When ordering, just ask to be Jillysized.</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Coffee</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/jilly2.PNG" class="img-responsive img-centered" alt="">
-                            <p>Jilly East grinds his coffee with his teeth and boils the water with his own rage.</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Blood</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/jilly3.PNG" class="img-responsive img-centered" alt="">
-                            <p>Jilly East once shat blood - the blood of 11,940 natives he had killed and eaten.</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- jQuery -->
