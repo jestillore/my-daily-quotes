@@ -2,6 +2,8 @@
 
 require './vendor/autoload.php';
 
+session_start();
+
 $fb = new Facebook\Facebook([
   'app_id' => '1765175180380152', // Replace {app-id} with your app id
   'app_secret' => '99c417e86fbc1f2d893d3be92efa203a',
