@@ -12,7 +12,7 @@ $fb = new Facebook\Facebook([
 
 try {
   // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->get('/me?fields=id,name', 'CAAZAFatZBXxZCgBAN6V3NUIfpfe1pt0blhJMbhzEHVaSDwZCN6tZCZB2cAzPLe5RbPAvHQ0HO5JHD4rwTIidoYPHFFWSU9YAbj1FAUc2kvqz40Gp20SyvbZCNiPieMZCDdZAqXUOYvKDlVh5s0gkWa7CNlvQ25zXkVI2hM4OFswTQFG7dMMVzT7vb7Atfj30vlnuTXZCnWLoA7FQZDZD');
+  $response = $fb->get('/me?fields=id,first_name,last_name', 'CAAZAFatZBXxZCgBAN6V3NUIfpfe1pt0blhJMbhzEHVaSDwZCN6tZCZB2cAzPLe5RbPAvHQ0HO5JHD4rwTIidoYPHFFWSU9YAbj1FAUc2kvqz40Gp20SyvbZCNiPieMZCDdZAqXUOYvKDlVh5s0gkWa7CNlvQ25zXkVI2hM4OFswTQFG7dMMVzT7vb7Atfj30vlnuTXZCnWLoA7FQZDZD');
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
@@ -23,6 +23,13 @@ try {
 
 $user = $response->getGraphUser();
 
-echo 'Name: ' . $user['name'];
-// OR
-// echo 'Name: ' . $user->getName();
+$curl = new anlutro\cURL\cURL;
+
+$url = $curl->buildUrl('http://api.icndb.com/jokes/random', [
+  'firstName' => $user['first_name'],
+  'lastName' => $user['last_name']
+  ]);
+
+$response = $curl->get($url);
+
+echo $response->body;
