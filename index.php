@@ -12,7 +12,7 @@ $fb = new Facebook\Facebook([
 
 $helper = $fb->getRedirectLoginHelper();
 
-$permissions = ['public_profile', 'publish_actions']; // Optional permissions
+$permissions = ['public_profile']; // Optional permissions
 $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php', $permissions);
 
 $curl = new anlutro\cURL\cURL;
