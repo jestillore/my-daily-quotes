@@ -109,7 +109,7 @@ $loginUrl = $helper->getLoginUrl('http://quotes.ejillberth.xyz/fb-callback.php',
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Be Like Chuck Norris</h2>
+                    <h2>Be Like <?= $user['first_name'] . ' ' . $user['last_name']?></h2>
                     <hr class="star-light">
                 </div>
             </div>
